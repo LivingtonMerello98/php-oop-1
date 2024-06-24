@@ -7,9 +7,12 @@ class Movie
     public $description;
     public $releaseDate;
 
-    //class movie constructor
+    //class movie constructor con aggiunta del controllo per l'errore
     public function __construct($title, $description, $releaseDate)
     {
+        if (empty($title) || empty($description) || empty($releaseDate)) {
+            throw new Exception("tutti i parametri devono essere soddisfatti e non vuoti");
+        }
         $this->title = $title;
         $this->description = $description;
         $this->releaseDate = $releaseDate;
@@ -26,11 +29,17 @@ class Movie
 }
 
 
-$movie1 = new Movie('Transformers', 'lorem ipsum', '2012');
-$movie2 = new Movie('I am Legend', 'lorem ipsum', '2012');
-$movie3 = new Movie('E.T', 'lorem ipsum', '2012');
+
+try {
+
+    $movie1 = new Movie('Transformers', 'lorem ipsum', '2012');
+    $movie2 = new Movie('I am Legend', 'lorem ipsum', '2012');
+    $movie3 = new Movie('E.T', '', '2012');
 
 
-$movie1->print();
-$movie2->print();
-$movie3->print();
+    $movie1->print();
+    $movie2->print();
+    $movie3->print();
+} catch (Exception $e) {
+    echo 'errore: ' . $e->getMessage();
+}
