@@ -14,4 +14,12 @@ class Movie
         $this->description = $description;
         $this->releaseDate = $releaseDate;
     }
+
+    //funzione per stampare su schermo
+    public function print()
+    {
+        echo "Title: " . $this->title;
+        echo "Description: " . $this->description;
+        echo "Release Date: " . $this->releaseDate;
+    }
 }
