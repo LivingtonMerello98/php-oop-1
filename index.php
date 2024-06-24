@@ -32,9 +32,10 @@ class Movie
 
 try {
 
-    $movie1 = new Movie('Transformers', 'lorem ipsum', '2012');
-    $movie2 = new Movie('I am Legend', 'lorem ipsum', '2012');
-    $movie3 = new Movie('E.T', '', '2012');
+    $movie1 = new Movie('Transformers', 'Un film d\'azione sui robot.', '2007-07-03');
+    $movie2 = new Movie('Io sono Leggenda', 'Un thriller post-apocalittico.', '2007-12-14');
+    $movie3 = new Movie('E.T.', 'Un film di fantascienza su un alieno amichevole.', '1982-06-11');
+
 
 
     $movie1->print();
